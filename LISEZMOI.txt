@@ -1,0 +1,8 @@
+Collecte de Noël 2026 – Tengué's Children Home
+
+- Ouvrez index.html dans un navigateur.
+- Ajoutez dans ce même dossier :
+    video.mp4  (vidéo jouée en boucle, sans son)
+    photo.jpg  (photo des enfants)
+  Les noms doivent être exactement ceux-ci.
+- Pour mettre en ligne : déposez le dossier sur Netlify Drop, GitHub Pages, etc.

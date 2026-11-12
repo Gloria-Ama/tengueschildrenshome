@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Un Noël pour les enfants de CUAED – Collecte de Noël 2026</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{--vert:#0f5b3a;--soleil:#f2c14e;--terre:#b3202f;--creme:#fffaf1;--gris:#5b6660}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Nunito Sans',system-ui,sans-serif;background:var(--creme);color:#1f2a24;line-height:1.55;font-size:17px}
+  .page{max-width:980px;margin:0 auto;padding:32px 22px 28px}
+  h1,h2{font-family:'Fraunces',Georgia,serif;line-height:1.15}
+  h2{color:var(--vert);font-size:clamp(24px,3.5vw,30px);margin-bottom:14px;text-align:center}
+  section{margin-top:40px}
+
+  .hero{background:radial-gradient(circle at 20% 15%,rgba(242,193,78,.35),transparent 35%),linear-gradient(150deg,#8e1622,#b3202f 55%,#0f5b3a);color:#fff;border-radius:24px;padding:48px 36px;text-align:center;margin-top:0;position:relative;overflow:hidden}
+  .hero::before{content:'✦  ❄  ✦  ❄  ✦  ❄  ✦  ❄  ✦';position:absolute;top:12px;left:0;right:0;color:rgba(255,255,255,.35);letter-spacing:.4em;font-size:14px}
+  .hero small{color:var(--soleil);font-weight:700;letter-spacing:.08em;text-transform:uppercase;font-size:13px}
+  h1{font-size:clamp(32px,6vw,50px);margin:12px 0 16px}
+  h1 em{font-style:normal;color:var(--soleil)}
+  .hero p{opacity:.94;max-width:640px;margin:0 auto;font-size:19px}
+  .cta{display:inline-block;margin-top:24px;background:var(--terre);color:#fff;font-weight:700;padding:14px 30px;border-radius:999px;text-decoration:none;font-size:17px}
+  .slogan{margin-top:22px;font-style:italic;opacity:.85;font-size:15px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-28px;padding:0 16px;position:relative}
+  @media(max-width:700px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stats div{background:#fff;border-radius:16px;padding:20px 10px;text-align:center;box-shadow:0 8px 24px rgba(15,91,58,.10)}
+  .stats b{display:block;font-family:'Fraunces',serif;font-size:38px;color:var(--terre);line-height:1}
+  .stats span{color:var(--gris);font-weight:700;font-size:14px}
+
+  .besoins{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:760px){.besoins{grid-template-columns:repeat(2,1fr)}}
+  .besoins div{background:#fff;border:1px solid #eadfcb;border-radius:16px;padding:20px;text-align:center}
+  .besoins .i{font-size:32px}
+  .besoins h3{font-family:'Fraunces',serif;color:var(--vert);font-size:19px;margin:6px 0 4px}
+  .besoins p{color:var(--gris);font-size:15px}
+
+  .paroles{background:var(--vert);border-radius:24px;padding:36px 28px}
+  .paroles h2{color:#fff}
+  .quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+  @media(max-width:760px){.quotes{grid-template-columns:1fr}}
+  blockquote{background:rgba(255,255,255,.09);color:#fff;border-left:4px solid var(--soleil);border-radius:12px;padding:16px 18px;font-family:'Fraunces',serif;font-size:17px;line-height:1.4}
+  cite{display:block;font:700 12px 'Nunito Sans',sans-serif;color:var(--soleil);margin-top:8px;font-style:normal;letter-spacing:.04em}
+
+  .don{background:#fff;border-radius:20px;padding:32px 24px;text-align:center;border-top:6px solid var(--terre);box-shadow:0 8px 24px rgba(0,0,0,.06)}
+  .don p{color:var(--gris);margin-bottom:16px}
+  .pp{display:inline-flex;gap:12px;align-items:center;background:#e7f2ec;border-radius:999px;padding:10px 10px 10px 22px;font-weight:700;color:var(--vert);flex-wrap:wrap;justify-content:center;font-size:18px}
+  button{background:var(--terre);color:#fff;border:none;border-radius:999px;padding:10px 18px;font-weight:700;cursor:pointer;font-family:inherit;font-size:15px}
+  .contact{display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;margin-top:22px;font-weight:700}
+  .contact a{color:var(--vert);text-decoration:none}
+  .methodes{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:8px;text-align:left}
+  .m{background:#fffaf1;border:1px solid #eadfcb;border-radius:14px;padding:16px 18px}
+  .m h3{font-family:'Fraunces',serif;color:var(--vert);font-size:18px}
+  .m .pays{font-size:13px;color:var(--gris);font-weight:700;margin-bottom:8px}
+  .m .val{display:flex;justify-content:space-between;align-items:center;gap:8px;background:#e7f2ec;border-radius:10px;padding:8px 8px 8px 12px;font-weight:700;color:var(--vert);margin-top:6px}
+  @media(max-width:700px){.methodes{grid-template-columns:1fr}}
+  .m .val span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-size:clamp(13px,1.9vw,16px)}
+  .m .val button{padding:6px 12px;font-size:13px;flex-shrink:0}
+  .m dl{font-size:15px;margin-top:6px}
+  .m dt{display:inline;color:var(--gris)} .m dd{display:inline;font-weight:700;margin:0}
+  .lieu{background:#fff;border-radius:20px;padding:28px;display:grid;grid-template-columns:1fr 1fr;gap:24px;border:1px solid #eadfcb}
+  @media(max-width:700px){.lieu{grid-template-columns:1fr}}
+  .lieu h3{font-family:'Fraunces',serif;color:var(--vert);font-size:20px;margin-bottom:6px}
+  .lieu p{color:var(--gris)}
+  .medias{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:700px){.medias{grid-template-columns:1fr}}
+  .media{background:#fff;border-radius:20px;padding:14px;border:1px solid #eadfcb}
+  .media h3{font-family:'Fraunces',serif;color:var(--vert);font-size:19px;margin:4px 6px 10px}
+  .media video,.media img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;display:block;background:#e7f2ec}
+  .vide{aspect-ratio:4/5;border-radius:14px;background:repeating-linear-gradient(45deg,#e7f2ec,#e7f2ec 14px,#f3f8f5 14px,#f3f8f5 28px);display:none;align-items:center;justify-content:center;color:var(--vert);font-weight:700;text-align:center;padding:20px}
+  footer{text-align:center;font-size:13px;color:var(--gris);margin-top:28px}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="hero">
+    <small>🎄 Collecte de Noël 2026 · Canada · France · Sénégal · partout</small>
+    <h1>Offrons un <em>Noël de joie</em> aux 120 enfants de Tengué's Children Home</h1>
+    <p>Depuis le 15 septembre 2025, l'orphelinat Tengué's Children Home accueille à Alouenou Sowadankopé, au Togo, des enfants orphelins et en situation de précarité. Ensemble, offrons-leur un vrai repas de fête, un cadeau et un moment de bonheur.</p>
+    <a href="#don" class="cta">🎁 Je donne pour Noël</a>
+    <p class="slogan">« Offrir un sourire à un enfant démuni, c'est recevoir une joie immense en retour. »</p>
+  </header>
+
+  <div class="stats">
+    <div><b>120</b><span>enfants</span></div>
+    <div><b>70</b><span>garçons</span></div>
+    <div><b>50</b><span>filles</span></div>
+    <div><b>4–16</b><span>ans</span></div>
+  </div>
+
+  <section>
+    <h2>La vie à l'orphelinat</h2>
+    <div class="medias">
+      <div class="media"><h3>🎥 En vidéo</h3>
+        <video src="video.mp4" autoplay muted loop playsinline onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"></video>
+        <div class="vide">Vidéo à venir</div></div>
+      <div class="media"><h3>📷 En photo</h3>
+        <img src="photo.jpg" alt="Les enfants de Tengué's Children Home" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="vide">Photo à venir</div></div>
+    </div>
+  </section>
+
+  <section class="lieu">
+    <div>
+      <h3>📍 Où se trouve l'orphelinat ?</h3>
+      <p>À <strong>Alouenou Sowadankopé</strong>, dans la préfecture du <strong>Bas-Mono</strong>, près d'Afagnagan, au Togo.</p>
+    </div>
+    <div>
+      <h3>💛 Notre mission</h3>
+      <p>Offrir aux enfants orphelins ou vulnérables un foyer, l'accès à l'éducation, de la nourriture, un suivi médical et un accompagnement.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Ce que votre don offrira à Noël</h2>
+    <div class="besoins">
+      <div><div class="i">🍗</div><h3>Repas de fête</h3><p>Un grand repas de Noël partagé par les 120 enfants.</p></div>
+      <div><div class="i">🎁</div><h3>Un cadeau</h3><p>Un jouet ou un livre pour chaque enfant.</p></div>
+      <div><div class="i">👗</div><h3>Habits de fête</h3><p>Une tenue neuve et des chaussures pour Noël.</p></div>
+      <div><div class="i">📚</div><h3>Rentrée de janvier</h3><p>Fournitures pour bien reprendre l'école.</p></div>
+    </div>
+  </section>
+
+  <section class="paroles">
+        <div class="quotes">
+      <blockquote>Celui qui a pitié du pauvre prête à l'Éternel, qui lui rendra selon son œuvre.<cite>PROVERBES 19:17</cite></blockquote>
+      <blockquote>Ils t'interrogent au sujet des orphelins. Dis : « Leur faire du bien est la meilleure action. »<cite>CORAN, AL-BAQARA 2:220</cite></blockquote>
+      <blockquote>Vaincre la pauvreté n'est pas un geste de charité, c'est un acte de justice.<cite>NELSON MANDELA</cite></blockquote>
+      <blockquote>Le pain que tu manges te nourrit ; le pain que tu partages avec l'indigent et l'orphelin te sauve.<cite>PROVERBE HÉBREU</cite></blockquote>
+      <blockquote>Un bol de riz donné à celui qui a faim vaut mieux que mille prières récitées dans un temple.<cite>PROVERBE CHINOIS</cite></blockquote>
+      <blockquote>La richesse ne diminue jamais par l'aumône donnée à l'orphelin et au nécessiteux ; elle se purifie et grandit.<cite>PROVERBE ARABE</cite></blockquote>
+    </div>
+  </section>
+
+  <section class="don" id="don">
+    <h2>🎄 Faire un don pour Noël</h2>
+    <p>Chaque don, petit ou grand, apporte un sourire. Indiquez « Noël 2026 » dans le message de votre don.</p>
+    <div class="methodes">
+      <div class="m"><h3>Virement Interac</h3><div class="pays">🇨🇦 Canada</div>
+        <div class="val"><span>tengueschildrenshomedon@gmail.com</span><button data-c="tengueschildrenshomedon@gmail.com">Copier</button></div></div>
+      <div class="m"><h3>PayPal</h3><div class="pays">🌍 Partout (France, Europe…)</div>
+        <div class="val"><span>contact@cuaedasso.com</span><button data-c="contact@cuaedasso.com">Copier</button></div></div>
+      <div class="m"><h3>Wave · Orange Money</h3><div class="pays">🇸🇳 Sénégal</div>
+        <div class="val"><span>+221 77 863 22 64</span><button data-c="+221778632264">Copier</button></div></div>
+      <div class="m"><h3>TMoney</h3><div class="pays">🇹🇬 Togo</div>
+        <div class="val"><span>+228 90 02 75 94</span><button data-c="+22890027594">Copier</button></div></div>
+      <div class="m" style="grid-column:1/-1"><h3>Western Union · Ria · MoneyGram</h3><div class="pays">🌍 Depuis n'importe quel pays</div>
+        <dl>
+          <div><dt>Nom : </dt><dd>TENGUE</dd></div>
+          <div><dt>Prénoms : </dt><dd>Mawutsone Messan</dd></div>
+          <div><dt>Téléphone : </dt><dd>+228 90 02 75 94</dd></div>
+          <div><dt>Ville / Pays : </dt><dd>Afagnagan, Togo</dd></div>
+        </dl></div>
+    </div>
+    <div class="contact">
+      <a href="tel:+22890027594">📞 +228 90 02 75 94</a>
+      <a href="mailto:cuaed.togo@gmail.com">✉ cuaed.togo@gmail.com</a>
+      <a href="https://www.tiktok.com/@tengueschildrenshomeorph">🎵 @tengueschildrenshomeorph</a>
+    </div>
+  </section>
+
+  <footer>t.</footer>
+</main>
+<script>
+document.querySelectorAll('button[data-c]').forEach(b=>b.addEventListener('click',async()=>{
+  try{await navigator.clipboard.writeText(b.dataset.c);b.textContent='Copié ✓'}catch(e){b.textContent='Sélectionnez'}
+  setTimeout(()=>b.textContent='Copier',1600)}));
+</script>
+</body>
+</html>
